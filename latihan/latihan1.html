@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input min ="0" id="input"
+    placeholder="masukan detik">
+    <button id="btn">menghitung</button>
+    <p id="result"></p>
+    <script>
+        var x, y, jam, menit, detik,
+        input = document.getElementById('input'),
+        btn = document.getElementById('btn'),
+        result = document.getElementById('result');
+
+        btn.addEventListener('click',
+        function(){
+            x = input.value;
+            y = x % 3600;
+            hari = x / 86400
+            jam = x/3600;
+            menit = y / 60;
+            detik = y % 60;
+
+            result.innerHTML = Math.floor(hari)
+            + 'hari' +Math.floor(jam) + 'jam'
+            +Math.floor(menit) + 'menit' + Math.floor(detik) + 'detik';
+        })
+
+    </script>
+</body>
+</html>
+

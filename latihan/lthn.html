@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Document</title>
+	<style type="text/css">
+body{
+margin: 0;
+padding: 0;
+font-family: sans-serif;
+background: url(bg.jpg); 
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.box{
+width: 300px;
+padding: 40px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+background: #191919;
+text-align: center;
+}
+
+.box h1{
+color: white;
+text-transform: uppercase;
+font-weight: 500;
+}
+
+.box input[type = "text"], .box input[type = "password"]{
+border: 0;
+background: none;
+display: block;
+margin: 20px auto;
+text-align: center;
+border: 2px solid #3498db;
+padding: 14px 10px;
+width: 200px;
+outline: none;
+color: white;
+border-radius: 24px;
+transition: 0.25s;
+}
+
+
+.box input[type = "text"]:focus,.box input[type = "password"]:focus{
+width: 280px;
+border-color: #2ecc71;
+}
+
+.box input[type = "submit"]
+{
+ border: 0;
+background: none;
+display: block;
+margin: 20px auto;
+text-align: center;
+border: 2px solid #2ecc71;
+ padding: 14px 40px;
+ outline: none;
+ color: white;
+ border-radius: 24px;
+ transition: 0.25s;
+ cursor: pointer;
+}
+
+.box input[type = "submit"]:hover
+{
+ background: #2ecc71;
+}
+</style>
+</head>
+<body>
+	<form action="halaman utama.html" method="get" id="myForm" onsubmit=" return validasi()">
+		<p>Masukan Umur Anda</p>
+		nama  <input type="text" name="nama" placeholder="nama"> 
+		umur  <input type="text" name="Umur" placeholder="Umur">
+	  
+	  
+		<input class="Cek Umur" type="submit" name="submit" value="Cek Umur ">
+	  </form>
+	</body>
+	<script type="text/javascript">
+	function validasi(){
+	  var umur= document.forms["myForm"]["Umur"].value;
+	  var nama= document.forms["myForm"]["nama"].value;
+	 
+	  if(umur<=5){
+			  document.write("wah masih balita")
+		  }
+  
+		  else if (umur<=12){
+			  document.write("kamu mah masih bocah")
+		  }
+  
+		  else if (umur<=18){
+			  document.write("cie yang sudah remaja")
+		  }
+		  else if (umur<=40){
+			  document.write("sudah masuk kategori dewasa")
+		  }
+		  else if (umur<=60){
+			  document.write("orang tua sudah banyak istirahat ")
+		  }
+  
+		  else {
+			  (umur=>60)
+			  document.write("panjang umur perjuangan,sehat terus dan bahagia selalu")
+		  }
+		  }
+		  </script>
+</html>

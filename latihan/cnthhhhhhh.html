@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Perhotelan</title>
+
+</head>
+<body background="background-putih-abstrak-1.jpg">
+<center><p> <h2>
+    Deluxe Room = Rp 275.000/hari <br>
+Suite Room = Rp 300.000/hari <br>
+Precident Room = Rp 375.000/hari <br>
+Diskon : <br>
+Jika non Member <br>
+4 – 7 hari = 10% <br>
+> 7 hari = 15% <br>
+Jika Member <br>
+4 – 7 hari = 20% <br>
+> 7 hari = 35% <br>
+
+</p></h2></center>
+
+
+
+
+ <div>
+<center>
+  <table border="5">
+   <tr>    
+    <th>Nama</th>
+    <th><input type="text"  id="nama" onchange="total()" ></th>
+   </tr>
+   <tr>    
+    <tr>    
+        <th>status</th>
+        <th><input type="text"  id="status" onchange="total()" ></th>
+       </tr>
+       <tr>    
+    <th>Pilih kamar :</th>
+    <th><select id="kamar" onchange="total()">
+   <option>Deluxe Room</option>
+   <option>Suite Room</option>
+   <option>Precident Room</option>
+   
+    </select></th>
+   </tr>
+      
+   <tr>    
+    <th>Harga</th>
+    <th><input type="number"  id="harga" onchange="total()"></th>
+   </tr>
+
+   <tr>    
+    <th>Lama menginap</th>    
+    <th><input type="number" id="jumlah"  value="0" onchange="total()"></th>
+   </tr>
+
+   <tr>    
+    <th>diskon</th>    
+    <th><input type="number" id="persen"  value="0" onchange="total()"></th>
+   </tr>
+
+   
+   
+   <tr>    
+    <th>Jumlah total</th>
+    <th><input type="text" style="background: rgb(128, 124, 124)" id="total" disabled></th>
+   </tr>
+
+   <tr>    
+    <th>Pembayaran</th>    
+    <th><input type="number" id="bayar" onchange="total()"></th>
+   </tr>
+   
+   <tr>    
+    <th>Kembalian</th>
+    <th><input type="text" style="background: rgb(156, 154, 154)" id="total1" disabled></th>
+   </tr>
+   <tr>   
+    <table width="300" height="201px" border="8">
+    <th><label align="landscape"  id="cetak" ></label></th>
+    </table>
+   </tr>         
+   
+  </table>
+</center>     
+       
+  <script type="text/javascript">
+       
+  function total() {
+   var nama = document.getElementById('nama').value;
+   var status = document.getElementById('status').value;
+   var harga =  parseInt(document.getElementById('harga').value);
+   var jumlah_beli =  parseInt(document.getElementById('jumlah').value);
+   var diskonn=  parseInt(document.getElementById('persen').value);
+   var pembayaran =  parseInt(document.getElementById('bayar').value);
+   var jenis = document.getElementById("kamar").value;
+   
+   var jumlah_harga = harga * jumlah_beli / diskonn;
+    document.getElementById('total').value = jumlah_harga;
+
+   var kembali = pembayaran - jumlah_harga;
+    document.getElementById('total1').value = kembali;
+  
+   var cetak = "Nama    : "+nama+"</br>"+
+                "status    : "+status+"</br>"+
+                      "Harga   : "+harga+"</br>"+
+                      "lama menginap  : "+jumlah_beli+"</br>"+
+                      "Kamar anda  : "+jenis+"</br>"+
+                      "Jumlah total  : "+jumlah_harga+"</br>"+
+                   "pembayaran  : "+pembayaran+"</br>"+
+                      "Kembalian  : "+kembali;
+    document.getElementById("cetak").innerHTML=cetak;
+  }
+  
+  </script>
+ </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body background="../latihan/112259046-online-shopping-orange-background-shirt-money-sale-clothe-vector-illustration.jpg">
+    <form action="halaman utama.html" method="get" id="myForm" onsubmit=" return validasi()">
+    
+        umur  <input autocomplete="off" type="text" name="umur" placeholder="umur">
+      
+      
+        <input class="button" type="submit" name="submit" value="Tekan Aja">
+      </form>
+    </body>
+    <script type="text/javascript">
+
+    function validasi(){
+      var umur= document.forms["myForm"]["umur"].value;     
+      var a = prompt ("masukan nama")
+      document.write ("nama :" + a + "<br>");
+      if(umur<=5){
+              document.write("wah masih balita")
+          }
+  
+          else if (umur<=12){
+              document.write("kamu mah masih bocah")
+          }
+  
+          else if (umur<=18){
+              document.write("cie yang sudah remaja")
+          }
+          else if (umur<=40){
+              document.write("sudah masuk kategori dewasa")
+          }
+          else if (umur<=60){
+              document.write("orang tua sudah banyak istirahat ")
+          }
+  
+          else {
+              (umur=>60)
+              document.write("panjang umur perjuangan,sehat terus dan bahagia selalu")
+          }
+          }
+  </script>
+  </html>
+</body>
+</html>
